@@ -1,4 +1,7 @@
 #encoding: UTF-8
-require File.join 'active_support','time'
-require File.join 'str2duck','parser'
-require File.join 'str2duck','string'
+
+require File.join File.dirname(__FILE__),'str2duck','support'
+require File.join File.dirname(__FILE__),'str2duck','format'
+require File.join File.dirname(__FILE__),'str2duck','regexp'
+require File.join File.dirname(__FILE__),'str2duck','parser'
+require File.join File.dirname(__FILE__),'str2duck','string'
