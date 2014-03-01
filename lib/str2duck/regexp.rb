@@ -1,14 +1,15 @@
 #encoding: UTF-8
 module Str2Duck
   module Regexp
+    @@year  = '\d+'
     class << self
 
       def datetime? obj
 
         answer_value= nil
         [
-            /^\w+, \d+ \w+ \d\d\d\d \d\d:\d\d:\d\d \+\d+$/,
-            /^\d\d\d\d-\d\d-\d\d\w\d\d:\d\d:\d\d\+\d\d:\d\d$/
+            /^\w+, \d+ \w+ #{@@year} \d\d:\d\d:\d\d \+\d+$/,
+            /^#{@@year}-\d\d-\d\d\w\d\d:\d\d:\d\d\+\d\d:\d\d$/
         ].each do |regexp|
           answer_value ||= obj =~ regexp
         end
@@ -21,8 +22,8 @@ module Str2Duck
 
         answer_value= nil
         [
-            /^\d\d\d\d-\d\d-\d\d$/,
-            /^\w+, \d+ \w+ \d\d\d\d$/
+            /^#{@@year}-\d\d-\d\d$/,
+            /^\w+, \d+ \w+ #{@@year}$/
         ].each do |regexp|
           answer_value ||= obj =~ regexp
         end
@@ -35,7 +36,7 @@ module Str2Duck
 
         answer_value= nil
         [
-            /^\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d \+\d+$/
+            /^#{@@year}-\d\d-\d\d \d\d:\d\d:\d\d \+\d+$/
         ].each do |regexp|
           answer_value ||= obj =~ regexp
         end
