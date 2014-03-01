@@ -54,7 +54,7 @@ module Str2Duck
       end
 
       def false? obj
-        return Str2Duck.return_value_parse obj =~ /^true$/
+        return Str2Duck.return_value_parse obj =~ /^false$/
       end
 
       def float? obj
