@@ -5,7 +5,7 @@ module Str2Duck
     raise ArgumentError,"invalid input, must be string!" if string_data_obj.class != String
     return_value= nil
 
-    Str2Duck::Format.singleton_methods.each do |method_name|
+    [ :datetime, :date, :time, :true, :false, :float, :integer, :json, :yaml ].each do |method_name|
       return_value ||= Str2Duck::Format.__send__ method_name, string_data_obj
     end
 

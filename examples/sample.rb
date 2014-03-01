@@ -10,7 +10,9 @@ require_relative "../lib/str2duck"
   "123.432",
   "true",
   "false",
-  "some string data"
+  "some string data",
+  "{\"hello\":\"world\"}",
+  "--- hello\n..."
 ].each do |object|
   puts object.duck,object.duck.class,""
 end

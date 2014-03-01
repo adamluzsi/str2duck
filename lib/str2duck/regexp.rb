@@ -1,6 +1,10 @@
 #encoding: UTF-8
 module Str2Duck
   module Regexp
+
+    require 'json'
+    require 'yaml'
+
     @@year  = '\d+'
     class << self
 
@@ -59,6 +63,24 @@ module Str2Duck
 
       def integer? obj
         return Str2Duck.return_value_parse obj =~ /^\d+$/
+      end
+
+      def json? obj
+        begin
+          JSON.parse(obj)
+          return true
+        rescue ::JSON::ParserError
+          return false
+        end
+      end
+
+      def yaml? obj
+        begin
+          YAML.load(obj)
+          return true
+        rescue ::Psych::SyntaxError,::ArgumentError
+          return false
+        end
       end
 
     end

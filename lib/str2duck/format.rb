@@ -73,6 +73,21 @@ module Str2Duck
         nil
       end
 
+      def json obj
+        if Str2Duck::Regexp.json?(obj)
+          return JSON.parse(obj)
+        end
+        nil
+      end
+
+      # damn, this thing eats almost everything...
+      def yaml obj
+        if Str2Duck::Regexp.yaml?(obj)
+          return YAML.load(obj)
+        end
+        nil
+      end
+
     end
   end
 end
