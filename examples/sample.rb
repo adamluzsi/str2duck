@@ -11,8 +11,9 @@ require_relative "../lib/str2duck"
   "true",
   "false",
   "some string data",
-  "{\"hello\":\"world\"}",
-  "--- hello\n..."
+  "{\"hello\":\"json\"}",
+  "--- hello\n..." ,
+  "hello: yaml"
 ].each do |object|
   puts object.duck,object.duck.class,""
 end
@@ -21,7 +22,8 @@ begin
 
   require File.join 'active_support','time'
 
-  puts "but if you load the Active support gem like when you do anyway in Rails, the duck will be more with time formats flexible"
+  puts "But if you load the Active support gem like when you do anyway in Rails,",
+       "-> the parser will be more flexible in the time formats"
 
   [
       "2011-03-12",
@@ -33,13 +35,13 @@ begin
       "123.432",
       "true",
       "false",
-      "some string data"
+      "some string data",
+      "Sun, 28 Aug 2005",
+      "Fri, 25 Jan 2013 20:02:15 +0100"
+
   ].each do |object|
     puts object.duck,object.duck.class,""
   end
-
-  puts "Sun, 28 Aug 2005".duck.class
-  puts "Fri, 25 Jan 2013 20:02:15 +0100".duck.class
 
 rescue LoadError
 end
