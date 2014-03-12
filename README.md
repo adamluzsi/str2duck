@@ -62,5 +62,20 @@ If you dont want one or more parser to be active on parse, you can simply config
 
 ```
 
+Now it has a new object syntax sugar patch that allow you to call the duck methods on any class if you not sure,
+is the obj there is instance of anything but String or not
+```ruby
+    puts 123.duck.class
+    #Fixnum
+
+    puts ["hello","world"].duck.class
+    #Array
+
+    puts '{"hello":"world"}'.duck.class
+    #Hash
+
+    puts "hello: world".duck.class
+    #Hash
+```
 
 Happy parsing!
