@@ -1,7 +1,7 @@
 str2duck
 ========
 
-String to Duck type parser
+String(any object) to Duck type parser
 It can parse int, float, time, date . datetime, booleans ,json, yaml etc from string
 
 The main Goal for this project to give flexibility when you work on REST protocol where,
