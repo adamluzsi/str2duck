@@ -7,11 +7,10 @@ It can parse int, float, time, date . datetime, booleans ,json, yaml etc from st
 The main Goal for this project to give flexibility when you work on REST protocol where,
 most of the obj will be sent as string.
 
-With this you can do simeple validations like
+With this you can do simeple validations in Grape like this (or anywhere)
 ```ruby
 
   params['hash_obj_key'].duck.class <= Hash
-
 ```
 
 Possible bug source, not yet been tested is the american time format.
@@ -28,7 +27,6 @@ Possible bug source, not yet been tested is the american time format.
 
   # without sugar syntax, you can use this
   Str2Duck.parse("123.123")         #> Float obj
-
 ```
 
 it is possible ot extend the Duck flexibility be require the Active Supports time extension,
