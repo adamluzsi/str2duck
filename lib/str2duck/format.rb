@@ -8,7 +8,12 @@ module Str2Duck
           if defined? DateTime
             return DateTime.parse obj
           else
+
             time_parts= obj.scan(/\d+/).map(&:to_i)
+
+            puts time_parts.inspect
+            Process.exit
+
             if time_parts.count == 8
               2.times{time_parts.pop}
             elsif time_parts.count == 6
