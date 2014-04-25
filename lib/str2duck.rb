@@ -1,12 +1,15 @@
 #encoding: UTF-8
 
-require File.join File.dirname(__FILE__),'str2duck','support'
+require 'json'
+require 'yaml'
 
-require File.join File.dirname(__FILE__),'str2duck','regexp'
-require File.join File.dirname(__FILE__),'str2duck','format'
-require File.join File.dirname(__FILE__),'str2duck','config'
+require 'str2duck/support'
 
-require File.join File.dirname(__FILE__),'str2duck','parser'
+require 'str2duck/regexp'
+require 'str2duck/format'
+require 'str2duck/config'
 
-require File.join File.dirname(__FILE__),'str2duck','mpatch','string'
-require File.join File.dirname(__FILE__),'str2duck','mpatch','object'
+require 'str2duck/parser'
+
+require 'str2duck/mpatch/string'
+require 'str2duck/mpatch/object'

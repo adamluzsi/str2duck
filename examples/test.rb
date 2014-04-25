@@ -1,4 +1,4 @@
-require_relative "../lib/str2duck"
+require "str2duck"
 
 puts "false".to_duck.class
 

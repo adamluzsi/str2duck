@@ -2,9 +2,6 @@
 module Str2Duck
   module Regexp
 
-    require 'json'
-    require 'yaml'
-
     @@year  = '\d+'
     class << self
 
