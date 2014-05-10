@@ -1,15 +1,11 @@
 PATH
   remote: .
   specs:
-    str2duck (0.0.1)
-      active_support
+    str2duck (1.4.0)
 
 GEM
   remote: http://rubygems.org/
   specs:
-    active_support (3.0.0)
-      activesupport (= 3.0.0)
-    activesupport (3.0.0)
 
 PLATFORMS
   ruby

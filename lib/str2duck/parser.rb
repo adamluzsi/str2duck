@@ -1,8 +1,16 @@
 #encoding: UTF-8
 module Str2Duck
 
+  def self.activesupport
+    require File.join 'active_support','time'
+  rescue LoadError
+    return false
+  end
+
   def self.parse str
     raise(ArgumentError,"invalid input, must be string like") unless str.class <= String
+
+    @@activesupport ||= activesupport
 
     var= nil
     [ :datetime, :date, :time, :true, :false, :float, :integer, :json, :yaml ].each do |method_name|

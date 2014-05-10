@@ -20,8 +20,6 @@ end
 
 begin
 
-  require File.join 'active_support','time'
-
   puts "But if you load the Active support gem like when you do anyway in Rails,",
        "-> the parser will be more flexible in the time formats"
 
