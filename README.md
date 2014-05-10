@@ -29,12 +29,12 @@ Possible bug source, not yet been tested is the american time format.
   Str2Duck.parse("123.123")         #> Float obj
 ```
 
-it is possible ot extend the Duck flexibility be require the Active Supports time extension,
+it is possible ot extend the Duck flexibility be installing Active Supports for it's time extension,
 
-simple like that:
+simple like this in Gemfile:
 
 ```ruby
-  require File.join 'active_support','time'
+  gem 'activesupport'
 ```
 
 This will give you even more flexibility in terms of use :)
