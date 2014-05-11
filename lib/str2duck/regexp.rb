@@ -73,12 +73,10 @@ module Str2Duck
       end
 
       def yaml? obj
-        begin
-          YAML.load(obj)
-          return true
-        rescue ::Psych::SyntaxError,::ArgumentError
-          return false
-        end
+        YAML.safe_load(obj)
+        return true
+      rescue ::Exception
+        return false
       end
 
     end

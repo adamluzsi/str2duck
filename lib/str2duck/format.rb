@@ -88,9 +88,9 @@ module Str2Duck
       # damn, this thing eats almost everything...
       def yaml obj
         if Str2Duck::Regexp.yaml?(obj)
-          return YAML.load(obj)
+          return YAML.safe_load(obj)
         end
-        nil
+        return nil
       end
 
     end
