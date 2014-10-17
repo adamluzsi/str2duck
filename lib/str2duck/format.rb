@@ -66,7 +66,7 @@ module Str2Duck
 
       def float obj
         if Str2Duck::Regexp.float?(obj)
-          return obj.to_f
+          return obj.sub(',','.').to_f
         end
         nil
       end
