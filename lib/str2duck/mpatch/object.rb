@@ -3,7 +3,7 @@ module Str2Duck
     module ObjectEXT
 
       def to_duck
-        if self_obj.class <= String
+        if self.class <= String
           Str2Duck.parse(self)
         else
           return self
