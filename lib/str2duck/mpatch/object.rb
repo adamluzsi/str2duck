@@ -1,30 +1,20 @@
 module Str2Duck
-
   module MPatch
+    module ObjectEXT
 
-    module Object
-
-      def to_duck(self_obj= self)
-
+      def to_duck
         if self_obj.class <= String
-          Str2Duck::MPatch::String.duck(self_obj)
+          Str2Duck.parse(self)
         else
-          return self_obj
+          return self
         end
 
       end
 
       alias :duck :to_duck
 
-      self.instance_methods.each do |symbol|
-        module_function symbol
-        public symbol
-      end
-
     end
-
   end
-
 end
 
-Object.__send__( :include, Str2Duck::MPatch::Object )
+Object.__send__ :include, Str2Duck::MPatch::ObjectEXT

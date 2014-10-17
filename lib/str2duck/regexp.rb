@@ -16,7 +16,7 @@ module Str2Duck
           answer_value ||= obj =~ regexp
         end
 
-        return Str2Duck.return_value_parse answer_value
+        return !!answer_value
 
       end
 
@@ -30,7 +30,7 @@ module Str2Duck
           answer_value ||= obj =~ regexp
         end
 
-        return Str2Duck.return_value_parse answer_value
+        return !!answer_value
 
       end
 
@@ -43,24 +43,29 @@ module Str2Duck
           answer_value ||= obj =~ regexp
         end
 
-        return Str2Duck.return_value_parse answer_value
+        return !!answer_value
 
       end
 
       def true? obj
-        return Str2Duck.return_value_parse obj =~ /^true$/
+        return !!obj =~ /^true$/
       end
 
       def false? obj
-        return Str2Duck.return_value_parse obj =~ /^false$/
+        return !!obj =~ /^false$/
       end
 
       def float? obj
-        return Str2Duck.return_value_parse obj =~ /^\d+\.\d+$/
+        case obj.to_s
+          when /^\d+\.\d+$/,/^\d+,\d+$/
+            return true
+          else
+            return false
+        end
       end
 
       def integer? obj
-        return Str2Duck.return_value_parse obj =~ /^\d+$/
+        return !!obj =~ /^\d+$/
       end
 
       def json? obj
