@@ -10,8 +10,9 @@ module Str2Duck
         answer_value= nil
         [
             /^\w+, \d+ \w+ #{@@year} \d\d:\d\d:\d\d \+\d+$/,
-            /^#{@@year}-\d\d-\d\d\w\d\d:\d\d:\d\d\+\d\d:\d\d$/,
-            /\w+ \w+ \d+ #{@@year} \d+:\d+:\d+ \w+\+\d+ \(\w+\)/
+            /^-?#{@@year}-\d\d-\d\d\w\d\d:\d\d:\d\d\+\d\d:\d\d$/,
+            /\w+ \w+ \d+ #{@@year} \d+:\d+:\d+ \w+\+\d+ \(\w+\)/,
+            /^-?\d+-\d\d?-\d\d?\w\d\d?:\d\d?:\d\d?\w$/
         ].each do |regexp|
           answer_value ||= obj =~ regexp
         end
