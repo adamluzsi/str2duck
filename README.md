@@ -55,20 +55,17 @@ If you dont want one or more parser to be active on parse, pass the strategie na
   
 ```
 
-Now it has a new object syntax sugar patch that allow you to call the duck methods on any class if you not sure,
-is the obj there is instance of anything but String or not
+You can access duck parsing from object methods simple as:
 ```ruby
-    puts 123.duck.class
-    #Fixnum
 
-    puts ["hello","world"].duck.class
-    #Array
+    puts 123.to_duck.class #> Fixnum
 
-    puts '{"hello":"world"}'.duck.class
-    #Hash
+    puts ["hello","world"].to_duck.class #> Array
 
-    puts "hello: world".duck.class
-    #Hash
+    puts '{"hello":"world"}'.to_duck.class #> Hash
+
+    puts "hello: world".to_duck.class #> Hash
+
 ```
 
 Happy parsing!
