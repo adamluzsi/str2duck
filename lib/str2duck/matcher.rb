@@ -46,11 +46,11 @@ module Str2Duck::Matcher
   end
 
   def true?(obj)
-    return !!obj =~ /^true$/
+    return !!(obj =~ /^true$/)
   end
 
   def false?(obj)
-    return !!obj =~ /^false$/
+    return !!(obj =~ /^false$/)
   end
 
   def float?(obj)
@@ -63,7 +63,7 @@ module Str2Duck::Matcher
   end
 
   def integer?(obj)
-    return !!obj =~ /^\d+$/
+    return !!(obj =~ /^\d+$/)
   end
 
   def json?(obj)
