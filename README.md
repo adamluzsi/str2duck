@@ -58,14 +58,19 @@ If you dont want one or more parser to be active on parse, pass the strategie na
 You can access duck parsing from object methods simple as:
 ```ruby
 
-    puts 123.to_duck.class #> Fixnum
+    123.to_duck.class #> Fixnum
 
-    puts ["hello","world"].to_duck.class #> Array
+    ["hello","world"].to_duck.class #> Array
 
-    puts '{"hello":"world"}'.to_duck.class #> Hash
+    '{"hello":"world"}'.to_duck.class #> Hash
 
-    puts "hello: world".to_duck.class #> Hash
+    '{"hello":"world"}'.to_duck.class #> Hash
 
 ```
+
+### Changelog 
+
+* YAML support is dropped due the unpredictable flexible syntax of the yaml
+* Config constant no longer available, cause parsing moved from singleton pattern to instance based 
 
 Happy parsing!
