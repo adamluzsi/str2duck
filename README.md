@@ -1,8 +1,8 @@
 str2duck
 ========
 
-String(any object) to Duck type parser
-It can parse int, float, time, date . datetime, booleans ,json, yaml etc from string
+String to Duck type parser
+It can parse int, float, time, date,  datetime, booleans  and even json by guessing the type and using the right parsing metric on the string object.
 
 The main Goal for this project to give flexibility when you working with a protocol like for example: HTTP,
 where, most of the obj will be sent as string.
