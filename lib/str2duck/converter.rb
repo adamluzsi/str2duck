@@ -6,13 +6,13 @@ module Str2Duck::Converter
     if Str2Duck::Matcher.datetime?(obj)
       if defined?(DateTime) && DateTime.respond_to?(:parse)
         return DateTime.parse(obj)
-      else
-        if time_parts.count == 8
-          2.times { time_parts.pop }
-        elsif time_parts.count == 6
-          return nil
-        end
-        return Time.new(*time_parts)
+      # else
+      #   if time_parts.count == 8
+      #     2.times { time_parts.pop }
+      #   elsif time_parts.count == 6
+      #     return nil
+      #   end
+      #   return Time.new(*time_parts)
       end
     end; nil
   end

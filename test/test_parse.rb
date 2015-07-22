@@ -28,6 +28,7 @@ describe 'StringParse' do
   specify 'when checking json' do
     require 'json'
     "{\"hello\":\"json\"}".to_duck.must_be_instance_of Hash
+    '["dog","cat"]'.to_duck.must_be_instance_of Array
   end
 
 end

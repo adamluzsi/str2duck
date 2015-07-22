@@ -6,8 +6,8 @@ module Str2Duck
 
   require 'str2duck/core_ext'
 
-  def self.parse(obj,*parse_strategies)
-    self::Parser.new(*parse_strategies).parse(obj)
+  def self.parse(str,*parse_strategies)
+    self::Parser.new(*parse_strategies).parse(str)
   end
 
 end
