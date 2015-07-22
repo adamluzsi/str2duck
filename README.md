@@ -4,13 +4,14 @@ str2duck
 String(any object) to Duck type parser
 It can parse int, float, time, date . datetime, booleans ,json, yaml etc from string
 
-The main Goal for this project to give flexibility when you work on REST protocol where,
-most of the obj will be sent as string.
+The main Goal for this project to give flexibility when you working with a protocol like for example: HTTP,
+where, most of the obj will be sent as string.
 
-With this you can do simeple validations in Grape like this (or anywhere)
+With this you can simple convert string to other objects for any purpose
+
 ```ruby
 
-  params['hash_obj_key'].duck.class <= Hash
+  params['hash_obj_key'].to_duck.class <= Hash
 ```
 
 Possible bug source, not yet been tested is the american time format.
