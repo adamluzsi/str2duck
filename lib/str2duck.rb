@@ -1,8 +1,13 @@
-#encoding: UTF-8
+module Str2Duck
 
-require 'str2duck/regexp'
-require 'str2duck/format'
-require 'str2duck/config'
-require 'str2duck/parser'
+  require 'str2duck/matcher'
+  require 'str2duck/converter'
+  require 'str2duck/parser'
 
-require 'str2duck/mpatch/object'
+  require 'str2duck/core_ext'
+
+  def self.parse(obj,*parse_strategies)
+    self::Parser.new(*parse_strategies).parse(obj)
+  end
+
+end

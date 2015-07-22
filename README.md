@@ -47,17 +47,12 @@ like:
 
 ```
 
-If you dont want one or more parser to be active on parse, you can simply config th str2duck parser like this
+If you dont want one or more parser to be active on parse, pass the strategie names you want to be used on parsing
 
 ```ruby
 
-  # This will turn of yaml string parsing for example.
-  # From this point parsing will not check for yaml but return a string instead if none match
-  Str2Duck::Config.yaml = false
-
-  # This will return the implemented parsers, so you dont have to bingo
-  puts Str2Duck::Config.list
-
+  Str2Duck.parse('string',:datetime,:date)
+  
 ```
 
 Now it has a new object syntax sugar patch that allow you to call the duck methods on any class if you not sure,
